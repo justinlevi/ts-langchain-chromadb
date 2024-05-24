@@ -40,6 +40,7 @@ const fetchDocumentsWithChromaDBClient = async () => {
 
   const collection = await client.getCollection({
     name: "demo",
+    embeddingFunction: ef,
   });
 
   console.log(JSON.stringify(collection, null, 2));
@@ -59,7 +60,7 @@ async function run() {
   // This DOES NOT WORK NOW??
   fetchDocumentsWithChromaDBClient()
 
-  // This also works
+  // This works now
   fetchDocumentsWithLangchain()
 }
 
